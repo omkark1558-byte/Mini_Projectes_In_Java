@@ -52,13 +52,7 @@
 				break;
 				
 				default :
-					try { 
-						throw new insafBalException("Invalid choice... Try Again !");
-				//	System.out.println("Invalid choice... Try Again !");
-					}catch(insafBalException ex)
-					{
-					  ex.printStackTrace();
-					}
+				System.out.println("Invalid choice... Try Again !");
 			}
 		 } while(choice !=4);
 		 
@@ -73,14 +67,6 @@
 	} 
 }
  
- 
- class insafBalException extends Exception
- {
-	 public insafBalException(String ts)
-	 {
-		 super(ts);
-	 }
- }
 class Banks {
 	 private String Name;
 	 private double balance;
