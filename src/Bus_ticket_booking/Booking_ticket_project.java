@@ -146,23 +146,17 @@ public class Booking_ticket_project {
                     System.out.println("❌ Invalid Age! Please enter valid age between 1 and 100.");
                 }
             }
+            System.out.print("Gender (male/female/other/custom): ");
+            String gender = sc.next().toLowerCase();
 
-            String gender;
+            if (!(gender.equals("male") ||
+                  gender.equals("female") ||
+                  gender.equals("other") ||
+                  gender.equals("custom"))) {
 
-            while (true) {
-                System.out.print("Gender (male/female/other/custom): ");
-                gender = sc.next().toLowerCase();
-
-                if (gender.equals("male") || 
-                    gender.equals("female") || 
-                    gender.equals("other") || 
-                    gender.equals("custom")) {
-                    break;
-                } else {
-                    System.out.println("❌ Invalid Gender! Only male, female, other, custom allowed.");
-                }
+                System.out.println("❌ Invalid Gender! Ticket Booking Cancelled.");
+                return;
             }
-
             plist.add(new Passenger(name, age, gender));
         }
 
