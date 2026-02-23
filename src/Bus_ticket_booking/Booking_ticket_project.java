@@ -134,11 +134,34 @@ public class Booking_ticket_project {
             System.out.print("Name: ");
             String name = sc.nextLine();
 
-            System.out.print("Age: ");
-            int age = sc.nextInt();
+            int age;
 
-            System.out.print("Gender: ");
-            String gender = sc.next();
+            while (true) {
+                System.out.print("Age (1 - 100): ");
+                age = sc.nextInt();
+
+                if (age >= 1 && age <= 100) {
+                    break;
+                } else {
+                    System.out.println("❌ Invalid Age! Please enter valid age between 1 and 100.");
+                }
+            }
+
+            String gender;
+
+            while (true) {
+                System.out.print("Gender (male/female/other/custom): ");
+                gender = sc.next().toLowerCase();
+
+                if (gender.equals("male") || 
+                    gender.equals("female") || 
+                    gender.equals("other") || 
+                    gender.equals("custom")) {
+                    break;
+                } else {
+                    System.out.println("❌ Invalid Gender! Only male, female, other, custom allowed.");
+                }
+            }
 
             plist.add(new Passenger(name, age, gender));
         }
